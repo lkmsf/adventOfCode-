@@ -12,19 +12,24 @@ year=${2:-$(date +%Y)}
 inputFileName=${day}.in
 > ${inputFileName} # erase file
 curl https://adventofcode.com/${year}/day/${day}/input --cookie session="${AOC_SESSION}" >> ${inputFileName}
-open -a Visual\ Studio\ Code ${inputFileName}
 
-if [[! -f "test${day}.in"]]; then
+if [ ! -f "test${day}.in" ] 
+then
     touch test${day}.in
-    open -a Visual\ Studio\ Code test${inputFileName}
+fi
 
 # set up python file 
 codeFileName=day${day}.py
-if [[! -f "$codeFileName"]]; then
+if [ ! -f "$codeFileName" ] 
+then
     touch $codeFileName
     cat ../template/template.py >> $codeFileName
-
-    sed -i ""  "s/%%FILE_NAME_HERE%%/${inputFileName}/g" $codeFileName
 fi
 
+sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
+sed -i ""  "s/%%YEAR%%/${year}/g" $codeFileName
+sed -i ""  "s/%%AOC_SESSION%%/${AOC_SESSION}/g" $codeFileName
+
+open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName
+open -a Visual\ Studio\ Code ${inputFileName}
