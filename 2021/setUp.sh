@@ -13,22 +13,13 @@ inputFileName=${day}.in
 > ${inputFileName} # erase file
 curl https://adventofcode.com/${year}/day/${day}/input --cookie session="${AOC_SESSION}" >> ${inputFileName}
 
-if [ ! -f "test${day}.in" ] 
-then
-    touch test${day}.in
-fi
+touch test${day}.in
 
 # set up python file 
 codeFileName=day${day}.py
-if [ ! -f "$codeFileName" ] 
-then
-    touch $codeFileName
-    cat ../template/template.py >> $codeFileName
-fi
+cp -n ../template/template.py $codeFileName
 
 sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
-sed -i ""  "s/%%YEAR%%/${year}/g" $codeFileName
-sed -i ""  "s/%%AOC_SESSION%%/${AOC_SESSION}/g" $codeFileName
 
 open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName

@@ -20,7 +20,7 @@ def main():
     print(f"part2: {p2}")
 
     for i, part in enumerate([p1, p2]):
-        print(f'curl -d "level={i + 1}&answer={part}" -X POST "https://adventofcode.com/%%YEAR%%/day/%%DAY%%/answer" --cookie session="%%AOC_SESSION%%"')
+        print(f'bash submit.sh {i+1} {part}')
 
 
 def part1(inp):

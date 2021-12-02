@@ -11,19 +11,13 @@ def main():
 
     inp = [int(x) for x in inp]
 
-    p1 = part1(inp)
-    p2 = part2(inp)
+    calc_increase = lambda win: sum(f > e for e, f in zip(inp, inp[win:]))
+    p1 = calc_increase(1)
+    p2 = calc_increase(3)
 
     print(f"part1: {p1}")
     print(f"part2: {p2}")
 
 
-def part1(inp):
-    return sum(1 for e, f in zip(inp, inp[1:]) if f > e)
-
-def part2(inp):
-    windows = [sum((a, b, c)) for a, b, c in zip(inp, inp[1:], inp[2:])]
-    return sum(1 for e, f in zip(windows, windows[1:]) if f > e)
-    
 if __name__ == "__main__":
     main()
