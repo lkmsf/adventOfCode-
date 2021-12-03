@@ -24,3 +24,5 @@ sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
 open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName
 open -a Visual\ Studio\ Code ${inputFileName}
+
+open https://adventofcode.com/${year}/day/${day}
