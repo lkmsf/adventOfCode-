@@ -16,7 +16,7 @@ curl https://adventofcode.com/${year}/day/${day}/input --cookie session="${AOC_S
 touch test${day}.in
 
 # set up python file 
-codeFileName=day${day}.py
+codeFileName=day${day}_part1.py
 cp -n ../template/template.py $codeFileName
 
 sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
