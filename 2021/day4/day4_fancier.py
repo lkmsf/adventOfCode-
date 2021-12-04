@@ -11,11 +11,7 @@ def main():
 
     numbers = inp[0].split(",")
 
-    inBoards = [x.splitlines() for x in inp[1:]]
-
-    boards = []
-    for val in inBoards:
-        boards.append([v.split() for v in val])
+    boards = [[row.split() for row in b.splitlines()] for b in inp[1:]]
 
     p1 = part1(numbers, boards)
     p2 = part2(numbers, boards)
