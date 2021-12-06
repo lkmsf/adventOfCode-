@@ -3,7 +3,6 @@
 AOC_SESSION=$(<../aoc_session.txt)
 day=$(TZ='America/New_York' date +%-d)
 year=$(date +%Y)
-echo ${year}
 
 echo "Submitting part $1 answer: $2"
 
