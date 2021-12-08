@@ -8,6 +8,8 @@ AOC_SESSION=$(<../aoc_session.txt)
 day=${1:-$(TZ='America/New_York' date +%-d)}
 year=${2:-$(date +%Y)}
 
+open https://adventofcode.com/${year}/day/${day}
+
 # save the unique user input file
 inputFileName=${day}.in
 > ${inputFileName} # erase file
@@ -24,5 +26,3 @@ sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
 open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName
 open -a Visual\ Studio\ Code ${inputFileName}
-
-open https://adventofcode.com/${year}/day/${day}
