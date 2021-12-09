@@ -1,7 +1,8 @@
 from collections import Counter, defaultdict
 from itertools import combinations, chain 
 import re
-import sys
+import statistics
+import math
 
 with open("%%DAY%%.in") as f:
 # with open("test%%DAY%%.in") as f:
