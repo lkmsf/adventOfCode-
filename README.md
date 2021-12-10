@@ -9,17 +9,12 @@ The other fun part of this is that I'm learning how to make bash scripts and sen
 
 TODO: 
 * Vscode settings 
-  * set up run so that it runs with the file directory instead of workspace directory 
   * better shortcut for running a python file
 * setUp script 
-  * change names to remove day numbers since we put them in a folder anyways 
-  * open the advent of code website first instead of waiting for input file
   * Learn how to use cron and automate this!
   * maybe separate the create files and download input script logic? No reason not to make the other files before the time
 * submit script
-  * lets change this to the copy/paste value with the day being the single argument 
   * lets also shorten this name if we're doing it that way
-  * can this automatically also create a "fancier" file when we submit part 2 correctly
 * Far off
   * might be a fun exercise to scrape the aoc reddit for python solutions to see different approaches
     * also would be good to learn this
@@ -30,6 +25,17 @@ TODO:
   * Might be fun to write this up too! Good explanation of basic bash script stuff / process of automating a thing
 
 Done: 
+
+1/9 
+* setUp script 
+  * change names to remove day numbers since we put them in a folder anyways 
+* submit script
+  * lets change this to the copy/paste value with the day being the single argument -> no arguments!
+  * can this automatically also create a "fancier" file when we submit part 2 correctly
+
+1/1
+  * set up run so that it runs with the file directory instead of workspace directory 
+  * open the advent of code website first instead of waiting for input file
 
 1/3 
 * don't try and do both parts in the same file
