@@ -8,7 +8,8 @@ AOC_SESSION=$(<../aoc_session.txt)
 day=${1:-$(TZ='America/New_York' date +%-d)}
 year=${2:-$(date +%Y)}
 
-open https://adventofcode.com/${year}/day/${day}
+mkdir day${day}
+cd day${day}
 
 # save the unique user input file
 inputFileName=${day}.in
@@ -18,11 +19,11 @@ curl https://adventofcode.com/${year}/day/${day}/input --cookie session="${AOC_S
 touch test${day}.in
 
 # set up python file 
-codeFileName=day${day}_part1.py
-cp -n ../template/template.py $codeFileName
-
-sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
+codeFileName=1.py
+cp -n ../../template/template.py $codeFileName
 
 open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName
 open -a Visual\ Studio\ Code ${inputFileName}
+
+open https://adventofcode.com/${year}/day/${day}
