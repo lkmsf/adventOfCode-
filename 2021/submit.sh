@@ -14,8 +14,8 @@ answer=`pbpaste`
 
 echo "Submitting part ${part} answer: ${answer}"
 
-#response=$(curl -d "level=${part}&answer=${answer}" -X POST "https://adventofcode.com/${year}/day/${day}/answer" --cookie session="${AOC_SESSION}" | grep "article")
-response=$(cat ../testing | grep "article")
+response=$(curl -d "level=${part}&answer=${answer}" -X POST "https://adventofcode.com/${year}/day/${day}/answer" --cookie session="${AOC_SESSION}" | grep "article")
+#response=$(cat ../testing | grep "article")
 
 echo $response
 
