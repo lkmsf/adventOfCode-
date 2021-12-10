@@ -10,7 +10,7 @@ part=1
 if [ -f "2.py" ]; then
     part=2
 fi
-answer=`pbpaste`
+answer=$(pbpaste)
 
 echo "Submitting part ${part} answer: ${answer}"
 
