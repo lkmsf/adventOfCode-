@@ -21,6 +21,7 @@ touch test${day}.in
 # set up python file 
 codeFileName=1.py
 cp -n ../../template/template.py $codeFileName
+sed -i ""  "s/%%DAY%%/${day}/g" $codeFileName
 
 open -a Visual\ Studio\ Code test${inputFileName}
 open -a Visual\ Studio\ Code $codeFileName
