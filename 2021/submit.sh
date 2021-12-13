@@ -1,8 +1,11 @@
 #!/bin/bash
 
 AOC_SESSION=$(<../aoc_session.txt)
-day=$(TZ='America/New_York' date +%-d)
-year=$(date +%Y)
+# day=$(TZ='America/New_York' date +%-d)
+# year=$(date +%Y)
+
+day=${1:-$(TZ='America/New_York' date +%-d)}
+year=${2:-$(date +%Y)}
 
 cd day${day}
 
