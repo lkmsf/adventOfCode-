@@ -18,13 +18,13 @@ TODO:
 * Far off
   * might be a fun exercise to scrape the aoc reddit for python solutions to see different approaches
     * also would be good to learn this
-  * Automate also downloading the testing input 
-    * it's generally one of the first things within <code> blocks but not always
-    * so find the first "sufficently" large code block
-    * then write to the testing file but make sure formatting is correct
   * Might be fun to write this up too! Good explanation of basic bash script stuff / process of automating a thing
 
 Done: 
+
+1/13
+* download testing input into file!! 
+* make running code with test file easier
 
 1/9 
 * setUp script 
