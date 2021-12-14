@@ -3,9 +3,11 @@ from itertools import combinations, chain
 import re
 import statistics
 import math
+import sys
 
-with open("13.in") as f:
-#with open("test13.in") as f:
+inputFile = "test.in" if len(sys.argv) > 1 else "data.in"
+
+with open(inputFile) as f:
     inp = f.read().strip()
     inp = inp.split("\n\n")
     inp = [x.splitlines() for x in inp]
