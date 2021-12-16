@@ -10,67 +10,57 @@ inputFile = "test.in" if len(sys.argv) > 1 else "data.in"
 with open(inputFile) as f:
     inp = f.read().strip()
 
+# simulate pass by ref by putting it into a one element list
 def popValues(s, length, r):
     r["len"] += length
-    result = s[:length]
-    for i in range(length): s.pop(0)
+    result = s[0][:length]
+    s[0] = s[0][length:]
     return result
 
-def getInt(l, base):
-    return int("".join(l), base)
-
 def parseLiteral(s, r):
-    num = []
+    num = ""
     ind = 1
     while ind:
-        ind, data = getInt(popValues(s, 1, r), 2), popValues(s, 4, r)
+        ind, data = int(popValues(s, 1, r), 2), popValues(s, 4, r)
         num += data
-    r["D"] = getInt(num, 2)
+    r["D"] = int(num, 2)
 
-    return s, r
+    return r
 
 def parseOperator(s, r):
-    lenTypeID = getInt(popValues(s, 1, r), 2)
+    lenTypeID = int(popValues(s, 1, r), 2)
 
     if lenTypeID == 0:
         # length is a 15 bit number
-        lenInside = getInt(popValues(s, 15, r), 2) 
+        lenInside = int(popValues(s, 15, r), 2) 
 
         r["values"] = []
         len = lenInside 
         while len:
-            if len < 0: raise ValueError("ParseOp: len is negative")
-            s, currR = parsePacket(s)
+            currR = parsePacket(s)
             r["len"] += currR["len"]
             r["values"].append(currR)
             len -= currR["len"]
 
     elif lenTypeID == 1:
-        numPackets = getInt(popValues(s, 11, r), 2)
+        numPackets = int(popValues(s, 11, r), 2)
 
         r["values"] = []
         for i in range(numPackets):
-            s, currR = parsePacket(s) 
+            currR = parsePacket(s) 
             r["len"] += currR["len"]
             r["values"].append(currR)
 
-    else: raise ValueError("ParseOp - lenTypeId unexpected value")
-
-    return s, r
-
+    return r
 
 def parsePacket(s):
     r = {"len": 0}
-    r["V"] = getInt(popValues(s, 3, r), 2) 
-    r["T"] = getInt(popValues(s, 3, r), 2)
+    r["V"] = int(popValues(s, 3, r), 2) 
+    r["T"] = int(popValues(s, 3, r), 2)
 
-    if r["T"] == 4:
-        s, r = parseLiteral(s, r)
-    else:
-        s, r = parseOperator(s, r)
+    r = parseLiteral(s, r) if r["T"] == 4 else parseOperator(s, r)
 
-    return s, r
-
+    return r
 
 def countVersion(packets):
     if "values" not in packets:
@@ -88,27 +78,11 @@ def evalPackets(packets):
 
     return operations[packets["T"]](vals)
 
+# convert from hex to bin
+start = bin(int(inp, 16))[2:]
+toBin = start.zfill(math.ceil(len(start) / 4) * 4)
 
-hexToBin = {
-    "0" : "0000", 
-    "1" : "0001", 
-    "2" : "0010", 
-    "3" : "0011", 
-    "4" : "0100", 
-    "5" : "0101", 
-    "6" : "0110", 
-    "7" : "0111", 
-    "8" : "1000", 
-    "9" : "1001", 
-    "A" : "1010", 
-    "B" : "1011", 
-    "C" : "1100", 
-    "D" : "1101", 
-    "E" : "1110", 
-    "F" : "1111", 
-}
-toBin = list("".join(hexToBin[x] for x in inp))
-
-s, packets = parsePacket(list(toBin))
+# get all the packets then analyze
+packets = parsePacket([toBin])
 print(countVersion(packets))
 print(evalPackets(packets))
