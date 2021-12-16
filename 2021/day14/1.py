@@ -28,7 +28,7 @@ def doRound(poly, rules):
 
     return poly
 
-for i in range(40):
+for i in range(10):
     poly = doRound(poly, rules)
 
 counts = Counter(poly)
