@@ -7,7 +7,8 @@ AOC_SESSION=$(<../aoc_session.txt)
 day=${1:-$(TZ='America/New_York' date +%-d)}
 year=${2:-$(date +%Y)}
 
-cd day${day}
+cd ~/Documents/adventOfCode-/${year}/day${day}
+#day${day}
 
 part=1
 if [ -f "2.py" ]; then
