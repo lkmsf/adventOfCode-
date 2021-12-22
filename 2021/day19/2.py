@@ -43,8 +43,8 @@ def findBeacons(scannerToPlace, beacons):
         if offset:
             dx, dy, dz = offset
             shiftedVals = set([(x + dx, y + dy, z + dz) for x,y,z in option])
-            return shiftedVals
-    return None
+            return shiftedVals, offset
+    return None, None
 
 
 foundBeacons = scanners[0]
@@ -52,21 +52,29 @@ foundBeacons = scanners[0]
 scannersPlaced = set()
 scannersPlaced.add(0)
 
+scannersPlacements = []
+
 totalToPlace = len(scanners)
 while len(scannersPlaced) != totalToPlace:
     for i, otherScanner in scanners.items():
         if i in scannersPlaced: continue
-        match = findBeacons(otherScanner, foundBeacons)
+        match, offset = findBeacons(otherScanner, foundBeacons)
         if match:
-            print(len(match))
-            print("unioned")
+            scannersPlacements.append(offset)
+            print("beacons so far:", len(match))
             foundBeacons = foundBeacons.union(match)
             scannersPlaced.add(i)
             break
     
-# for x in currBeacons:
-#     print(x)
-print(len(foundBeacons))
+print(scannersPlacements)
+
+dist = []
+for a, b in combinations(scannersPlacements, 2):
+    d = sum(abs(e - r) for e,r in zip(a, b))
+    dist.append(d)
+
+print(max(dist))
+
 
         # xs = [x[0] for x in option]
         # for dx in range(max(xs) - 1000, min(xs) + 1001):
