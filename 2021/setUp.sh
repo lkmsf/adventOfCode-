@@ -6,6 +6,8 @@
 
 # text data into file: pbpaste > test,in
 
+open https://adventofcode.com/${year}/day/${day}
+
 AOC_SESSION=$(<../aoc_session.txt)
 day=${1:-$(TZ='America/New_York' date +%-d)}
 year=${2:-$(date +%Y)}
@@ -29,7 +31,6 @@ open -a Visual\ Studio\ Code test.in
 open -a Visual\ Studio\ Code $codeFileName
 open -a Visual\ Studio\ Code ${inputFileName}
 
-open https://adventofcode.com/${year}/day/${day}
 
 # save test data into file
 
