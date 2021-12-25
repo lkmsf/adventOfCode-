@@ -27,7 +27,6 @@ def game(p1, p2, s1, s2, turn1):
     elif s2 >= 21:
         return 0, 1
 
-
     w1, w2 = 0, 0
 
     for r1, r1C in rolls.items():

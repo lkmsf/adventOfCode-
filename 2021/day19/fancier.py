@@ -61,7 +61,7 @@ while len(scannersPlaced) != totalToPlace:
         match, offset = findBeacons(otherScanner, foundBeacons)
         if match:
             scannersPlacements.append(offset)
-            print("beacons so far:", len(match))
+            print("beacons so far:", len(foundBeacons))
             foundBeacons = foundBeacons.union(match)
             scannersPlaced.add(i)
             break
