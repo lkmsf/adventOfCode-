@@ -31,10 +31,8 @@ def runProgram(s):
         w = int(c)
 
         if zDiv == 1:
-            if ((z % 26) + xAdd) != w:
-                z = ((z / zDiv) * (26)) + (w + yAdd)
-            else:
-                z //= zDiv 
+            # xAdd > 10
+            z = ((z / zDiv) * (26)) + (w + yAdd)
         elif zDiv == 26:
             # xAdd < 0
             if ((z % 26) + xAdd) != w:
@@ -66,17 +64,30 @@ def runProgram(s):
 # z = [(a + 14), (b + 6), (c + 6), (c + )]
 
 
-# (c + 6) - 12 = e
-# (c + 6) - 15 = g
-# (h + 10) - 13 = j
-# (c + 6) - 13 = k
-# (b + 6) - 14 = l
-# (a + 14-  2   = m
-# (  )  -   9  = n
+# (d + 13) - 12 = e
+# (f + 8) - 15 = g
+# (i + 8) - 13 = j
+# (h + 10) - 13 = k
+# (c + 6) - 14 = l
+# (b + 6) -  2   = m
+# (a + 14)  -  9  = n
+
+# Rules
+# d + 1 = e
+# f - 7 = g
+# i - 5 = j
+# h - 3 = k
+# c - 8 = l
+# b + 4 = m
+# a + 5 = n
+
+          abcdefghijklmn
+smallest: 11912814611156 
+largest:  45989929946199            
 
 
 
-                   X   X    x   X    x   X   X   x   x     X
+                       X    x   X    x   X   X   x   x     x            
 # #       a    b   c   d    e   f    g   h   i   j   k     l    m   n        
 # zDiv = [1,   1,  1,  1,  26,  1,  26,  1,  1,  26, 26,   26, 26, 26]
 # yAdd = [14,  6,  6, 13,   8,  8,   7, 10,  8,  12,  10,   8,   8, 7]
@@ -85,27 +96,27 @@ def runProgram(s):
 # first char doesn't matter
 # second char doesn't matter
 # 
-def answer():
-    result = 0
-    i = 0
-    for a in range(9, 1, -1):
-        for b in range(9, 1, -1):
-            for c in range(9, 1, -1):
-                for d in range(9, 1, -1):
-                    for e in range(9, 1, -1):
-                        for f in range(9, 1, -1):
-                            for g in range(9, 1, -1):
-                                l = list(map(str, [a, b, c, d, e, f, g]))
-                                #num = "".join(l)
-                                num = "".join("9999" + str(a) + "9" + str(f) + str(g) + "99999"
+# def answer():
+#     result = 0
+#     i = 0
+#     for a in range(9, 1, -1):
+#         for b in range(9, 1, -1):
+#             for c in range(9, 1, -1):
+#                 for d in range(9, 1, -1):
+#                     for e in range(9, 1, -1):
+#                         for f in range(9, 1, -1):
+#                             for g in range(9, 1, -1):
+#                                 l = list(map(str, [a, b, c, d, e, f, g]))
+#                                 #num = "".join(l)
+#                                 num = "".join("9999" + str(a) + "9" + str(f) + str(g) + "99999"
 
-                                if i % 100000 == 0: print(num)
-                                i += 1
+#                                 if i % 100000 == 0: print(num)
+#                                 i += 1
 
-                                result = runProgram(num)
-                                if result:
-                                    print("result: ", num)
-                                    return 
+#                                 result = runProgram(num)
+#                                 if result:
+#                                     print("result: ", num)
+#                                     return 
 
 
-answer()
+# answer()
