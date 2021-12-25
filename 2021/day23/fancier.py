@@ -63,6 +63,9 @@ def slotToHallwayLocCost(c, hi, si, slots, hallway):
     return (hallwayMoves + toSlotMove) * energyCosts[c]
 
 # return the minimum energy cost to return everyone home
+# .  Recursive insight - every element has two moves 
+#       (1) to some hallway location
+#       (2) to their home slot
 def solve(slots, hallway, mem):
     key = (tuple(tuple(x) for x in slots), tuple(hallway))
     if everyoneHome(slots):
