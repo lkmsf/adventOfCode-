@@ -14,6 +14,8 @@ DESERT = 1000
 
 test = [["A", "B"], ["D", "C"], ["C", "B"], ["A", "D"]]
 
+# ended up just solving by hand
+
 with open(inputFile) as f:
     inp = f.read().strip()
     inp = inp.splitlines() 
