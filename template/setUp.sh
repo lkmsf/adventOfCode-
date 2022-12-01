@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sh ../setUp.sh day year (where day/year if not provided defautls to curr)
+# sh ../setUp.sh day year (where day/year if not provided defaults to curr)
 # needs to be run from the year directory
 # add in session cookie into aoc_session.txt file at main scope 
 

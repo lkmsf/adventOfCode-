@@ -32,7 +32,7 @@ then
         open -a Visual\ Studio\ Code 2.py
     else
         #part 2
-        open https://adventofcode.com/2021/leaderboard/self
+        open https://adventofcode.com/${year}/leaderboard/self
         cp -n 2.py fancier.py
         open -a Visual\ Studio\ Code fancier.py
     fi
