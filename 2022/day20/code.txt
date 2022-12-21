@@ -1,0 +1,27 @@
+for i in range(len(order)):
+    printList(nums)
+    val = nums[i]
+    if val == 0: continue
+
+    newPos = (i + val) % len(nums)
+    newNums = {i: 0 for i in range(len(order))}
+
+    for j in range(len(nums)):
+        newVal = 0
+        if j == newPos:
+            newVal = val
+        elif j < i and j < newPos:
+            newVal = nums[j] 
+        elif j < i and j > newPos:
+            if newPos < j:
+                newVal = val
+            if newPos > j:
+                newVal = val
+        elif i > val:
+            if newPos < i:
+                newVal = val
+            if newPos > i:
+                newVal = val
+        newNums[i] = newVal
+
+    nums = newNums 

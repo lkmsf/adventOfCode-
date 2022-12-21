@@ -28,7 +28,6 @@ def updateTail(h, t):
     return [t[0] + xDiff, t[1] + yDiff]
 
 
-
 for d, a in inp:
     xD, yD = dir[d]
     #print(d, a)

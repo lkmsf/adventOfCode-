@@ -9,12 +9,12 @@ inputFile = "test.in" if len(sys.argv) > 1 else "data.in"
 
 with open(inputFile) as f:
     inp = f.read().strip()
-    inp = inp.split("\n\n")
 
-inp = [[int(a) for a in x.split()] for x in inp]
+critical = 0
+for i in range(len(inp)):
+    curr = inp[i:i+14]
+    if len(curr) == len(set(curr)):
+        critical = i + 14 
+        break
 
-sums = [sum(x) for x in inp]
-
-vals = sorted(sums)[-3:]
-print(vals)
-print(sum(vals))
+print(critical)
