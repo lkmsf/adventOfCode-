@@ -1,0 +1,75 @@
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32}
+[['cczh', ['sllz', '+', 'lgvd']], ['ptdq', ['humn', '-', 'dvpt']], ['sjmn', ['drzm', '*', 'dbpl']], ['pppw', ['cczh', '/', 'lfqf']], ['lgvd', ['ljgn', '*', 'ptdq']], ['drzm', ['hmdt', '-', 'zczc']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30}
+[['cczh', [4, '+', 'lgvd']], ['ptdq', ['humn', '-', 3]], ['sjmn', ['drzm', '*', 5]], ['pppw', ['cczh', '/', 4]], ['lgvd', [2, '*', 'ptdq']]]
+
+adding in new ops - pppw
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150}
+[['cczh', [4, '+', 'lgvd']], ['ptdq', ['humn', '-', 3]], ['cczh', ['pppw', '*', 4]]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150}
+[['cczh', [4, '+', 'lgvd']], ['ptdq', ['humn', '-', 3]], ['cczh', ['pppw', '*', 4]], ['lgvd', [2, '*', 'ptdq']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600}
+[['cczh', [4, '+', 'lgvd']], ['ptdq', ['humn', '-', 3]], ['lgvd', [2, '*', 'ptdq']]]
+
+adding in new ops - cczh
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600}
+[['ptdq', ['humn', '-', 3]], ['lgvd', [2, '*', 'ptdq']], ['lgvd', [4, '+', 'cczh']]]
+
+reshuffle
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600}
+[['ptdq', ['humn', '-', 3]], ['lgvd', [2, '*', 'ptdq']], ['lgvd', [4, '+', 'cczh']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600}
+[['ptdq', ['humn', '-', 3]], ['lgvd', [2, '*', 'ptdq']], ['lgvd', [4, '+', 'cczh']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['ptdq', ['humn', '-', 3]], ['lgvd', [2, '*', 'ptdq']]]
+
+adding in new ops - ptdq
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['lgvd', [2, '*', 'ptdq']], ['humn', ['ptdq', '+', 3]]]
+
+reshuffle
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['lgvd', [2, '*', 'ptdq']], ['humn', ['ptdq', '+', 3]]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['lgvd', [2, '*', 'ptdq']], ['humn', ['ptdq', '+', 3]]]
+
+adding in new ops - lgvd
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['humn', ['ptdq', '+', 3]], ['ptdq', [2, '*', 'lgvd']]]
+
+reshuffle
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['humn', ['ptdq', '+', 3]], ['ptdq', [2, '*', 'lgvd']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604}
+[['humn', ['ptdq', '+', 3]], ['ptdq', [2, '*', 'lgvd']]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604, 'ptdq': 1208}
+[['humn', ['ptdq', '+', 3]]]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604, 'ptdq': 1208, 'humn': 1211}
+[]
+
+{'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'ljgn': 2, 'sllz': 4, 'hmdt': 32, 'drzm': 30, 'sjmn': 150, 'pppw': 150, 'cczh': 600, 'lgvd': 604, 'ptdq': 1208, 'humn': 1211}
+
+humn: 1211
+dbpl: 5
+zczc: 2
+dvpt: 3
+lfqf: 4
+ljgn: 2
+sllz: 4
+root: pppw + sjmn
+cczh: 4 + lgvd
+ptdq: X - dvpt
+sjmn: drzm * 5
+pppw: cczh / 4
+lgvd: 2 * ptdq
+drzm: hmdt - zczc
+hmdt: 32
